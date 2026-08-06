@@ -4,19 +4,32 @@ using OkulYonetim.Models;
 
 namespace OkulYonetim.Controllers;
 
-public class HomeController : Controller
+public class FakulteController : Controller
 {
-    public IActionResult Index()
+    private readonly ILogger<FakulteController> _logger;
+
+    public FakulteController(ILogger<FakulteController> logger)
+    {
+        _logger = logger;
+    }
+
+
+    public IActionResult FakulteListesi()
     {
         return View();
     }
 
-    public IActionResult Index2()
+    public IActionResult FakulteEkle()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult FakulteDuzenle()
+    {
+        return View();
+    }
+
+    public IActionResult FakulteSil()
     {
         return View();
     }
