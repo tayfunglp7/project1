@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Deneme Sayfası";
+}
+
+<h1>@ViewBag.Mesaj</h1>
+
+<p>Şu anki tarih ve saat: @ViewBag.Tarih</p>
+
+<p>2 + 3 = @(2 + 3)</p>
+
+<!-- Tek değer yazdırma -->
+<p>@ViewBag.Mesaj</p>
+
+<!-- İfade — parantez içine al -->
+<p>@(2 + 3)</p>
+<p>@(ViewBag.Mesaj + " " + ViewBag.Mesaj)</p>
+
+<!-- Kod bloğu -->
+@{
+    var bugun = DateTime.Now;
+    var selamlama = bugun.Hour < 12 ? "Günaydın" : "İyi günler";
+}
+
+
+<!-- Koşul -->
+@if (ViewBag.Sayi > 10)
+{
+    <p>Sayı büyük</p>
+}
+else
+{
+    <p>Sayı küçük</p>
+}
+
+
+<!-- Döngü — en çok kullanacağımız -->
+@foreach (var isim in new[] { "Ali", "Ayşe", "Mehmet" })
+{
+    <li>@isim</li>
+}
