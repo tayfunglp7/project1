@@ -1,9 +1,13 @@
+using OkulYonetim.Data;
+
 //Uygulamayı kurmaya başla
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // "Bu bir MVC uygulaması, Controller ve View kullanacağım"
 builder.Services.AddControllersWithViews();
+// 👇 YENİ SATIR: Repository'yi sisteme tanıt
+builder.Services.AddScoped<FakulteRepository>();
 
 var app = builder.Build();
 
