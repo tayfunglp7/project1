@@ -1,0 +1,10 @@
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.csproj.AssemblyReference.cache
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.AssemblyInfoInputs.cache
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.AssemblyInfo.cs
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.csproj.CoreCompileInputs.cache
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.RazorAssemblyInfo.cache
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.RazorAssemblyInfo.cs
+C:\Users\tayfu\OneDrive\Belgeler\dev\project1\OkulYonetim\obj\Debug\net8.0\OkulYonetim.sourcelink.json
