@@ -1,43 +1,25 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using OkulYonetim.Models;
+using OkulYonetim.Data;
 
 namespace OkulYonetim.Controllers;
 
 public class FakulteController : Controller
 {
-    private readonly ILogger<FakulteController> _logger;
-
-    public FakulteController(ILogger<FakulteController> logger)
+    private readonly FakulteRepository _repo;
+    // Yapıcı metot: sistem bize hazır bir FakulteRepository veriyor
+    public FakulteController(FakulteRepository repo)
     {
-        _logger = logger;
+        _repo = repo;
     }
-
-    public IActionResult FakulteListesi()
+    // GET: /Fakulte
+    public IActionResult Index()
     {
-        return View();
-    }
+        // 1. Repository'den veriyi al
+        List<Fakulte> fakulteler = _repo.TumunuGetir();
 
-    public IActionResult FakulteEkle()
-    {
-        return View();
-    }
-
-    public IActionResult FakulteDuzenle()
-    {
-        return View();
-    }
-
-      public IActionResult FakulteSil()
-    {
-        return View();
-    }
-
-   
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // 2. View'a gönder
+        return View(fakulteler);
     }
 }

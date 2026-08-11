@@ -1,0 +1,33 @@
+@model List<OkulYonetim.Models.Fakulte>
+@* ↑ Bu satır çok önemli:
+    "Bu sayfaya Fakulte listesi gelecek" diyoruz.
+    Bu sayede @Model yazdığımızda Visual Studio bize yardım eder.  *@
+@{
+    ViewData["Title"] = "Fakülteler";
+}
+
+<h1>Fakülteler</h1>
+<p>Toplam <strong>@Model.Count</strong> fakülte kayıtlı.</p>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Fakülte Adı</th>
+            <th>Telefon</th>
+            <th>E-posta</th>
+            <th>Kayıt Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var fakulte in Model)
+        {
+            <tr>
+                <td>@fakulte.FakulteId</td>
+                <td>@fakulte.FakulteAd</td>
+                <td>@fakulte.FakulteTelefon</td>
+                <td>@fakulte.FakulteEposta</td>
+                <td>@fakulte.CreatedDate.ToString("dd.MM.yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

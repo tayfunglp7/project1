@@ -43,20 +43,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVuZW1lXE1lcmhhYmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tayfu/OneDrive/Belgeler/dev/project1/OkulYonetim/Views/Fakulte/FakulteDuzenle.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFrdWx0ZVxGYWt1bHRlRHV6ZW5sZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/tayfu/OneDrive/Belgeler/dev/project1/OkulYonetim/Views/Fakulte/FakulteEkle.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFrdWx0ZVxGYWt1bHRlRWtsZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/tayfu/OneDrive/Belgeler/dev/project1/OkulYonetim/Views/Fakulte/FakulteListesi.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFrdWx0ZVxGYWt1bHRlTGlzdGVzaS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/tayfu/OneDrive/Belgeler/dev/project1/OkulYonetim/Views/Fakulte/FakulteSil.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFrdWx0ZVxGYWt1bHRlU2lsLmNzaHRtbA==
+[C:/Users/tayfu/OneDrive/Belgeler/dev/project1/OkulYonetim/Views/Fakulte/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFrdWx0ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tayfu/OneDrive/Belgeler/dev/project1/OkulYonetim/Views/Home/Index.cshtml]

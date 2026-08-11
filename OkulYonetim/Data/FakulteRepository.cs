@@ -32,7 +32,7 @@ public class FakulteRepository
                               created_date, updated_date, is_active
                        FROM fakulte
                        WHERE is_active = '1'
-                       ORDER BY fakulte_ad";
+                       ORDER BY created_date asc";
 
         // 3️⃣ Bağlantıyı aç
         // using -> iş bitince bağlantıyı OTOMATİK kapatır. Çok önemli!
