@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim\\OkulYonetim.csproj": {}
+    "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim\\OkulYonetim.csproj": {
+    "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim\\OkulYonetim.csproj",
+        "projectUniqueName": "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim.csproj",
         "projectName": "OkulYonetim",
-        "projectPath": "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim\\OkulYonetim.csproj",
+        "projectPath": "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim.csproj",
         "packagesPath": "C:\\Users\\tayfu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\OkulYonetim\\obj\\",
+        "outputPath": "C:\\Users\\tayfu\\OneDrive\\Belgeler\\dev\\project1\\OkulYonetim\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tayfu\\AppData\\Roaming\\NuGet\\NuGet.Config",
