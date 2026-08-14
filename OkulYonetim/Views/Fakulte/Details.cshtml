@@ -1,0 +1,39 @@
+@model OkulYonetim.Models.Fakulte
+@{
+    ViewData["Title"] = "Fakülte Detayları";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+
+                <dl class="row mb-4">
+                    <dt class="col-sm-3">Fakülte adı</dt>
+                    <dd class="col-sm-9">@Model.FakulteAd</dd>
+
+                    <dt class="col-sm-3">Adres</dt>
+                    <dd class="col-sm-9">@Model.FakulteAdres</dd>
+
+                    <dt class="col-sm-3">Telefon</dt>
+                    <dd class="col-sm-9">@Model.FakulteTelefon</dd>
+
+                    <dt class="col-sm-3">E-posta</dt>
+                    <dd class="col-sm-9">@Model.FakulteEposta</dd>
+                </dl>
+
+                <div class="text-muted small mb-3">
+                    Kayıt tarihi: @Model.CreatedDate.ToString("dd.MM.yyyy HH:mm")
+                    @if (Model.UpdatedDate.HasValue)
+                    {
+                        <span> | Son güncelleme: @Model.UpdatedDate.Value.ToString("dd.MM.yyyy HH:mm")</span>
+                    }
+                </div>
+
+                <hr />
+
+                <a asp-action="Index" class="btn btn-danger">Kapat</a>
+
+            </div>
+        </div>
+    </div>
