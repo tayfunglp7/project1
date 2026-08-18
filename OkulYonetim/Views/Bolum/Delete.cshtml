@@ -1,0 +1,40 @@
+@model OkulYonetim.Models.Bolum
+@{
+    ViewData["Title"] = "Bölümü sil";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="card border-danger shadow-sm">
+            <div class="card-header bg-danger text-white">
+                <i class="bi bi-exclamation-triangle"></i> Silme onayı
+            </div>
+            <div class="card-body">
+                <p>Bu bölümü silmek üzeresiniz:</p>
+
+                <dl class="row mb-4">
+                    <dt class="col-sm-3">Bölüm adı</dt>
+                    <dd class="col-sm-9">@Model.BolumAdi</dd>
+                    <dt class="col-sm-3">Telefon</dt>
+                    <dd class="col-sm-9">@Model.BolumTelefon</dd>
+                    <dt class="col-sm-3">E-posta</dt>
+                    <dd class="col-sm-9">@Model.BolumEposta</dd>
+                </dl>
+
+                <div class="alert alert-warning small">
+                    <i class="bi bi-info-circle"></i>
+                    Bu bölüme kayıtlı öğrenci ve akademisyenler etkilenmez,
+                    listelerde görünmeye devam eder.
+                </div>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="BolumId" name="id" />
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Evet, sil
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Vazgeç</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

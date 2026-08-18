@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 // 👇 YENİ SATIR: Repository'yi sisteme tanıt
 builder.Services.AddScoped<FakulteRepository>();
+builder.Services.AddScoped<BolumRepository>();
 
 var app = builder.Build();
 
