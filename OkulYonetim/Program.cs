@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 // 👇 YENİ SATIR: Repository'yi sisteme tanıt
 builder.Services.AddScoped<FakulteRepository>();
 builder.Services.AddScoped<BolumRepository>();
+builder.Services.AddScoped<OgrenciRepository>();
 
 var app = builder.Build();
 
@@ -34,7 +35,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Fakulte}/{action=Index}/{id?}")
+    pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
