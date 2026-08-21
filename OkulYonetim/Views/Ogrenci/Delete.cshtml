@@ -1,0 +1,66 @@
+@model OkulYonetim.Models.Ogrenci
+@{
+    ViewData["Title"] = "Öğrenciyi Sil";
+}
+
+<div class="row">
+    <div class="col-lg-7">
+        <div class="card border-danger shadow-sm">
+
+            <div class="card-header bg-danger text-white">
+                <i class="bi bi-exclamation-triangle"></i> Silme onayı
+            </div>
+
+            <div class="card-body">
+
+                <p>Bu öğrenciyi silmek üzeresiniz:</p>
+
+                <dl class="row mb-4">
+                    <dt class="col-sm-4">Ad soyad</dt>
+                    <dd class="col-sm-8 fw-semibold">@Model.TamAd</dd>
+
+                    <dt class="col-sm-4">Bölüm</dt>
+                    <dd class="col-sm-8">@Model.BolumAdi</dd>
+
+                    <dt class="col-sm-4">Sınıf</dt>
+                    <dd class="col-sm-8">@Model.OgrenciSinif. sınıf</dd>
+
+                    <dt class="col-sm-4">TC kimlik no</dt>
+                    <dd class="col-sm-8">@Model.OgrenciTc</dd>
+
+                    <dt class="col-sm-4">Telefon</dt>
+                    <dd class="col-sm-8">@Model.OgrenciTelefon</dd>
+
+                    <dt class="col-sm-4">E-posta</dt>
+                    <dd class="col-sm-8">@Model.OgrenciEposta</dd>
+
+                    <dt class="col-sm-4">Kayıt tarihi</dt>
+                    <dd class="col-sm-8">@Model.CreatedDate.ToString("dd.MM.yyyy")</dd>
+                </dl>
+
+                <div class="alert alert-warning small">
+                    <i class="bi bi-info-circle"></i>
+                    <strong>Kayıt veritabanından tamamen silinmez.</strong>
+                    Pasif duruma alınır ve listelerde görünmez, ancak veri saklanmaya
+                    devam eder. Bu sayede yanlışlıkla yapılan silmeler geri alınabilir.
+                </div>
+
+                <form asp-action="Delete" method="post">
+
+                    @* name="id" ŞART!
+                       Controller'daki DeleteConfirmed(long id) parametresi
+                       "id" adını bekliyor. asp-for tek başına "OgrenciId"
+                       adında bir alan üretirdi ve eşleşmezdi. *@
+                    <input type="hidden" asp-for="OgrenciId" name="id" />
+
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Evet, sil
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Vazgeç</a>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

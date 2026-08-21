@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<FakulteRepository>();
 builder.Services.AddScoped<BolumRepository>();
 builder.Services.AddScoped<OgrenciRepository>();
+builder.Services.AddScoped<AkademisyenRepository>();
 
 var app = builder.Build();
 

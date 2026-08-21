@@ -1,6 +1,6 @@
-@model List<OkulYonetim.Models.Ogrenci>
+@model List<OkulYonetim.Models.Akademisyen>
 @{
-    ViewData["Title"] = "Öğrenciler";
+    ViewData["Title"] = "Akademisyenler";
 }
 
 @if (TempData["Basarili"] != null)
@@ -14,10 +14,16 @@
 <div class="card border-0 shadow-sm">
 
     <div class="card-header bg-white d-flex justify-content-between align-items-center">
-        <span class="fw-semibold">Kayıtlı öğrenciler (@Model.Count)</span>
-        <a asp-action="Create" class="btn btn-success btn-sm">
-            <i class="bi bi-plus-lg"></i> Yeni öğrenci
-        </a>
+        <span class="fw-semibold">Kayıtlı akademisyenler (@Model.Count)</span>
+        <div>
+            @* Ekstra puan görevi: CSV dışa aktarma *@
+            <a asp-action="CsvIndir" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-download"></i> CSV
+            </a>
+            <a asp-action="Create" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-lg"></i> Yeni akademisyen
+            </a>
+        </div>
     </div>
 
     <div class="card-body p-0">
@@ -27,9 +33,9 @@
             @* Boş liste ekranı kullanıcıya NE YAPACAĞINI söylemeli *@
             <div class="text-center text-muted py-5">
                 <i class="bi bi-inbox fs-1 d-block mb-2"></i>
-                <p class="mb-3">Henüz öğrenci eklenmemiş.</p>
+                <p class="mb-3">Henüz akademisyen eklenmemiş.</p>
                 <a asp-action="Create" class="btn btn-sm btn-primary">
-                    İlk öğrenciyi ekle
+                    İlk akademisyeni ekle
                 </a>
             </div>
         }
@@ -41,7 +47,7 @@
                         <th style="width: 50px;">#</th>
                         <th>Ad soyad</th>
                         <th>Bölüm</th>
-                        <th class="text-center">Sınıf</th>
+                        <th>Fakülte</th>
                         <th class="text-center">Yaş</th>
                         <th>TC</th>
                         <th>İletişim</th>
@@ -53,60 +59,58 @@
                         int sira = 1;
                     }
 
-                    @foreach (var ogrenci in Model)
+                    @foreach (var akademisyen in Model)
                     {
-                        @* ── Yaş hesabı ────────────────────────────────
-                           Doğum günü bu yıl henüz gelmediyse bir yaş düşülür *@
-                        int yas = DateTime.Today.Year - ogrenci.OgrenciDogumTarihi.Year;
-                        if (ogrenci.OgrenciDogumTarihi.Date > DateTime.Today.AddYears(-yas))
+
+                        // ── Yaş hesabı ────────────────────────────
+                        // Doğum günü bu yıl gelmediyse bir yaş düşülür
+                        int yas = DateTime.Today.Year - akademisyen.AkademisyenDogumTarihi.Year;
+                        if (akademisyen.AkademisyenDogumTarihi.Date > DateTime.Today.AddYears(-yas))
                         {
                             yas--;
                         }
 
-                        @* ── TC maskeleme ──────────────────────────
-                           Kişisel veri; listede tam gösterilmesi gerekmez.
-                           Substring hata vermesin diye önce uzunluk kontrolü. *@
-                        string tcMaskeli = ogrenci.OgrenciTc.Length >= 3
-                            ? ogrenci.OgrenciTc.Substring(0, 3) + "********"
+                        // ── TC maskeleme ──────────────────────────
+                        // Kişisel veri; listede tam gösterilmesi gerekmez
+                        string tcMaskeli = akademisyen.AkademisyenTc.Length >= 3
+                            ? akademisyen.AkademisyenTc.Substring(0, 3) + "********"
                             : "***********";
 
+                        
                         <tr>
                             <td class="text-muted">@sira</td>
 
                             <td>
-                                <a asp-action="Details" asp-route-id="@ogrenci.OgrenciId"
+                                <a asp-action="Details" asp-route-id="@akademisyen.AkademisyenId"
                                    class="fw-semibold text-decoration-none">
-                                    @ogrenci.TamAd
+                                    @akademisyen.TamAd
                                 </a>
-                                <div class="text-muted small">@ogrenci.OgrenciCinsiyet</div>
+                                <div class="text-muted small">@akademisyen.AkademisyenCinsiyet</div>
                             </td>
 
                             <td>
                                 @* JOIN'den gelen bölüm adı — id değil! *@
-                                <span class="badge bg-secondary">@ogrenci.BolumAdi</span>
+                                <span class="badge bg-secondary">@akademisyen.BolumAdi</span>
                             </td>
 
-                            <td class="text-center">
-                                <span class="badge bg-info">@ogrenci.OgrenciSinif</span>
-                            </td>
+                            <td class="small text-muted">@akademisyen.FakulteAd</td>
 
                             <td class="text-center">@yas</td>
 
                             <td><code class="small">@tcMaskeli</code></td>
 
                             <td class="small">
-                                <div>@ogrenci.OgrenciTelefon</div>
-                                <div class="text-muted">@ogrenci.OgrenciEposta</div>
+                                <div>@akademisyen.AkademisyenTelefon</div>
+                                <div class="text-muted">@akademisyen.AkademisyenEposta</div>
                             </td>
 
                             <td class="text-end text-nowrap">
-                                <a asp-action="Details" asp-route-id="@ogrenci.OgrenciId" class="btn btn-sm btn-info">
-                                    <i class="bi bi-info-circle-fill"></i>
-                                </a>
-                                <a asp-action="Edit" asp-route-id="@ogrenci.OgrenciId" class="btn btn-sm btn-primary">
+                                <a asp-action="Edit" asp-route-id="@akademisyen.AkademisyenId"
+                                   class="btn btn-sm btn-outline-primary">
                                     <i class="bi bi-pencil"></i>
                                 </a>
-                                <a asp-action="Delete" asp-route-id="@ogrenci.OgrenciId" class="btn btn-sm btn-danger">
+                                <a asp-action="Delete" asp-route-id="@akademisyen.AkademisyenId"
+                                   class="btn btn-sm btn-outline-danger">
                                     <i class="bi bi-trash"></i>
                                 </a>
                             </td>

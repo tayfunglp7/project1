@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OkulYonetim")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcf55e6d09370fe53bb6b0473b84caa35fe0c5d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+faf70490c78c9d57fa65ab2b3a35953fe3dae340")]
 [assembly: System.Reflection.AssemblyProductAttribute("OkulYonetim")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OkulYonetim")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
